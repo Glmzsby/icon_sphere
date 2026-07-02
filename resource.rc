@@ -1,0 +1,66 @@
+#pragma code_page(65001)
+#include "resource.h"
+
+IDI_APPICON ICON "icon.ico"
+
+IDD_SETTINGS DIALOG 0, 0, 370, 510
+STYLE 0x80CA0840
+CAPTION "桌面图标球形 - 设置"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    GROUPBOX    "渲染与运动",           -1, 10, 4, 350, 160
+    LTEXT       "旋转速度：",           -1, 20, 22, 55, 12
+    CONTROL     "", IDC_SPEED, "msctls_trackbar32", 0x50010001, 85, 20, 200, 18
+    LTEXT       "1.00x",                IDC_SPEED_LABEL, 290, 22, 45, 12
+    LTEXT       "旋转方向：",           -1, 20, 48, 55, 12
+    COMBOBOX    IDC_DIRECTION,         85, 46, 120, 80, 0x00200003
+    AUTOCHECKBOX "反向旋转",            IDC_REVERSE, 85, 72, 100, 14
+    LTEXT       "球体大小：",           -1, 20, 94, 55, 12
+    CONTROL     "", IDC_SPHERE_SIZE, "msctls_trackbar32", 0x50010001, 85, 92, 200, 18
+    LTEXT       "68%",                  IDC_SPHERE_LABEL, 290, 94, 45, 12
+    LTEXT       "倾斜角度：",           -1, 20, 120, 55, 12
+    CONTROL     "", IDC_TILT, "msctls_trackbar32", 0x50010001, 85, 118, 200, 18
+    LTEXT       "20 deg",               IDC_TILT_LABEL, 290, 120, 45, 12
+    LTEXT       "帧率：",               -1, 20, 144, 40, 12
+    COMBOBOX    IDC_FPS,               85, 142, 60, 80, 0x00200003
+
+    GROUPBOX    "半透明渲染",            -1, 10, 172, 350, 140
+    LTEXT       "图标大小：",           -1, 20, 190, 55, 12
+    CONTROL     "", IDC_ICON_SIZE, "msctls_trackbar32", 0x50010001, 85, 188, 200, 18
+    LTEXT       "72 px",                IDC_ICON_LABEL, 290, 190, 45, 12
+    LTEXT       "透明度：",             -1, 20, 216, 55, 12
+    CONTROL     "", IDC_OPACITY, "msctls_trackbar32", 0x50010001, 85, 214, 200, 18
+    LTEXT       "75%",                  IDC_OPACITY_LABEL, 290, 216, 45, 12
+    LTEXT       "渐隐深度：",           -1, 20, 242, 55, 12
+    CONTROL     "", IDC_FADE, "msctls_trackbar32", 0x50010001, 85, 240, 200, 18
+    LTEXT       "55%",                  IDC_FADE_LABEL, 290, 242, 45, 12
+    AUTOCHECKBOX "启动即开始旋转",       IDC_AUTOSTART_ROT, 20, 266, 140, 14
+    AUTOCHECKBOX "开机自动启动",         IDC_AUTOSTART_BOOT, 20, 284, 140, 14
+
+    GROUPBOX    "名称设置",              -1, 10, 320, 350, 112
+    AUTOCHECKBOX "显示名称",             IDC_SHOW_NAMES_ALL, 20, 338, 75, 14
+    AUTOCHECKBOX "仅悬停显示",           IDC_NAME_ON_HOVER, 170, 338, 90, 14
+    AUTOCHECKBOX "文件夹",               IDC_SHOW_FOLDER_N, 38, 356, 55, 14
+    AUTOCHECKBOX "文件",                 IDC_SHOW_FILE_N, 110, 356, 45, 14
+    AUTOCHECKBOX "应用程序",             IDC_SHOW_APP_N, 175, 356, 65, 14
+    LTEXT       "文件夹色：",           -1, 20, 378, 45, 12
+    COMBOBOX    IDC_FOLDER_NC,          68, 376, 55, 80, 0x00200003
+    LTEXT       "文件色：",             -1, 132, 378, 35, 12
+    COMBOBOX    IDC_NAME_COLOR,         170, 376, 55, 80, 0x00200003
+    LTEXT       "应用色：",             -1, 232, 378, 35, 12
+    COMBOBOX    IDC_APP_NC,             270, 376, 55, 80, 0x00200003
+    LTEXT       "字号：",               -1, 20, 402, 35, 12
+    CONTROL     "", IDC_NAME_FONTSZ, "msctls_trackbar32", 0x50010001, 55, 400, 120, 18
+    LTEXT       "10px",                 IDC_NAME_FONTSZ_LABEL, 180, 402, 35, 12
+
+    LTEXT       "脉动模式：",           -1, 20, 442, 55, 12
+    COMBOBOX    IDC_MUSIC_MODE,         80, 440, 100, 80, 0x00200003
+    AUTOCHECKBOX "逆向滑动",              IDC_DRAG_REVERSE, 190, 440, 70, 14
+    LTEXT       "空白拖拽：",           -1, 265, 442, 40, 12
+    COMBOBOX    IDC_BLANK_DRAG,         305, 440, 55, 80, 0x00200003
+
+    PUSHBUTTON  "恢复默认",             IDC_DEFAULTS, 14, 476, 70, 22
+    PUSHBUTTON  "应用",                 IDC_APPLY, 190, 476, 55, 22
+    PUSHBUTTON  "确定",                IDC_OK, 250, 476, 55, 22
+    PUSHBUTTON  "取消",                IDC_CANCEL, 310, 476, 55, 22
+END
